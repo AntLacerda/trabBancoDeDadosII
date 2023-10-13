@@ -14,8 +14,8 @@ model Ponto {
   id     Int    @id @default(autoincrement())
   titulo String
   tipo   String
-  data   DateTime @db.Date
-  hora   DateTime @db.Time()
+  data   String
+  hora   String
   lat    Float
   lng    Float
 }

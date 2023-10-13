@@ -1,6 +1,8 @@
 let mapa;
 let marker;
 
+let center = {lat: -6.888463202449027, lng: -38.558930105104125};
+
 async function initMap() {
     mapa = new google.maps.Map(document.getElementById("map"), {
       center: center,
@@ -14,7 +16,7 @@ async function initMap() {
       return resp.json();
     }).then((resp)=>{
       resp.map((ponto)=>{
-        let latLng = {lat: parseFloat(ponto.lat), lng: parseFloat(ponto.lng)}
+        let latLng = {lat: ponto.lat, lng: ponto.lng}
   
         const contentString =
         '<div id="content">' +
