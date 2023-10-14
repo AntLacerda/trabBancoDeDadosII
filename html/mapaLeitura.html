@@ -9,23 +9,46 @@
   <link rel="stylesheet" type="text/css" href="./mapaLeitura.css" />
   <script src="../src/mapReadScript.js"></script>
   <script src="../src/mapRead.js"></script>
+  <script src="../src/mapRepost.js"></script>
 </head>
 
 <body>
   <div class="menu">
     <div class="logo">
       <a href="../html/index.html"><img src="../public/img/logo.png" alt="Logotipo da N-REPORT"></a>
-      <p>Confira as ultimas ocorrências reportadas ao nosso sistema. Recomendamos que você evite tais áreas em um período de 24hrs. </p>
+      <p>Confira as ultimas ocorrências reportadas ao nosso sistema. Recomendamos que você evite tais áreas em um
+        período de 24hrs. </p>
       <p>Caso queira informar uma ocorrência, clique no botão abaixo</p>
       <button onclick="abrirForm()">REPORTAR</button>
     </div>
   </div>
   <div id="map" class="conteudo"></div>
   <div class="form">
-    <form>
-      <h1>Reportando um crime:</h1>
-      <button type="button" class="btn cancel" onclick="fecharForm()">Close</button>
-    </form>
+    <div id="map2"></div>
+    <div id="form">
+      <form action="/pagina-processa-dados-do-form" method="post">
+        <div>
+          <label for="descricao">Descreva a ocorrência:</label>
+          <input type="text" id="descricao" placeholder="Ex.: Dois homens numa moto roubaram minha mochila."/>
+          <label for="tipo">Escolha o tipo do crime:</label>
+          <input list="tipos" name="tipo" id="tipo">
+          <datalist id="tipos">
+            <option value="Furto">
+            <option value="Roubo">
+            <option value="Sequestro">
+            <option value="Homicídio">
+            <option value="Outros tipos">
+          </datalist>
+          <label for="data">Data:</label>
+          <input type="date" id="data" />
+          <label for="hora">Hora:</label>
+          <input type="time" id="hora" />
+        </div>
+        <div>
+          <button type="button" onclick="salvar()">Salvar</button>
+        </div>
+      </form>
+    </div>
   </div>
   <script src="https://maps.googleapis.com/maps/api/js?key=&callback=initMap&libraries=&v=weekly" async></script>
 </body>
