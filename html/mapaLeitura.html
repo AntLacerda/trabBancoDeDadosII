@@ -7,7 +7,6 @@
   <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
   <link rel="stylesheet" type="text/css" href="./reset.css">
   <link rel="stylesheet" type="text/css" href="./mapaLeitura.css" />
-  <script src="../src/mapReadScript.js"></script>
   <script src="../src/mapRead.js"></script>
   <script src="../src/mapRepost.js"></script>
 </head>
@@ -19,37 +18,11 @@
       <p>Confira as ultimas ocorrências reportadas ao nosso sistema. Recomendamos que você evite tais áreas em um
         período de 24hrs. </p>
       <p>Caso queira informar uma ocorrência, clique no botão abaixo</p>
-      <button onclick="abrirForm()">REPORTAR</button>
+      <a href="./mapaReport.html"><button>REPORTAR</button></a>
     </div>
   </div>
   <div id="map" class="conteudo"></div>
-  <div class="form">
-    <div id="map2"></div>
-    <div id="form">
-      <form action="/pagina-processa-dados-do-form" method="post">
-        <div>
-          <label for="descricao">Descreva a ocorrência:</label>
-          <input type="text" id="descricao" placeholder="Ex.: Dois homens numa moto roubaram minha mochila."/>
-          <label for="tipo">Escolha o tipo do crime:</label>
-          <input list="tipos" name="tipo" id="tipo">
-          <datalist id="tipos">
-            <option value="Furto">
-            <option value="Roubo">
-            <option value="Sequestro">
-            <option value="Homicídio">
-            <option value="Outros tipos">
-          </datalist>
-          <label for="data">Data:</label>
-          <input type="date" id="data" />
-          <label for="hora">Hora:</label>
-          <input type="time" id="hora" />
-        </div>
-        <div>
-          <button type="button" onclick="salvar()">Salvar</button>
-        </div>
-      </form>
-    </div>
-  </div>
+  
   <script src="https://maps.googleapis.com/maps/api/js?key=&callback=initMap&libraries=&v=weekly" async></script>
 </body>
 

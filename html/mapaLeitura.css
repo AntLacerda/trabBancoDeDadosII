@@ -43,16 +43,6 @@ body {
   cursor: pointer;
 }
 
-.form {
-  display: none;
-  position: absolute;
-  width: 96vw;
-  height: 96vh;
-  margin: 2vh 2vw;
-  z-index: 2;
-  background-color: white;
-}
-
 .conteudo {
   background-color: #292929;
   position: absolute;

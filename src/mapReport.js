@@ -4,7 +4,7 @@ let marker;
 let center = {lat: -6.888463202449027, lng: -38.558930105104125};
 
 async function initMap() {
-  mapa = new google.maps.Map(document.getElementById("map2"), {
+  mapa = new google.maps.Map(document.getElementById("map"), {
     center: center,
     zoom: 14,
   });
@@ -30,7 +30,7 @@ function addMarker(evt){
 
 async function salvar(){
     const obj = {
-        titulo: document.getElementById('descricao').value,
+        titulo: document.getElementById('titulo').value,
         tipo: document.getElementById('tipo').value,
         data: document.getElementById('data').value,
         hora: document.getElementById('hora').value,
