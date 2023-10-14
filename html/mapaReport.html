@@ -1,44 +1,57 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <title>Mapa de Report</title>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
     <link rel="stylesheet" type="text/css" href="./mapaReport.css" />
+    <link rel="stylesheet" type="text/css" href="./reset.css"/>
     <script src="../src/mapReport.js"></script>
 </head>
-
 <body>
-    <div id="map"></div>
-
-    <div class="form">
-        <div id="map"></div>
-        <div id="form">
-            <form action="/pagina-processa-dados-do-form" method="post">
-                <div>
-                    <label for="descricao">Descreva a ocorrência:</label>
-                    <input type="text" id="descricao"
-                        placeholder="Ex.: Dois homens numa moto roubaram minha mochila." />
-                    <label for="tipo">Escolha o tipo do crime:</label>
-                    <input list="tipos" name="tipo" id="tipo">
-                    <datalist id="tipos">
-                        <option value="Furto">
-                        <option value="Roubo">
-                        <option value="Sequestro">
-                        <option value="Homicídio">
-                        <option value="Outros tipos">
-                    </datalist>
-                    <label for="data">Data:</label>
-                    <input type="date" id="data" />
-                    <label for="hora">Hora:</label>
-                    <input type="time" id="hora" />
-                </div>
-                <div>
-                    <button type="button" onclick="salvar()">Salvar</button>
-                </div>
-            </form>
+    <header>
+        <div class="cabecalho">
+            <div class="logo">
+                <a href="./index.html"><img src="../public/img/logo.png" alt="Logotipo da N-REPORT"></a>
+            </div>
+            <div class="menu">
+                <a href="./index.html"><button style="text-decoration: underline #CC00FF">HOME</button></a>
+                <a href="./mapaReport.html"><button>REPORT</button></a>
+                <a href="./mapaLeitura.html"><button>OCORRÊNCIAS</button></a>
+            </div>
         </div>
-    </div>
+    </header>
+
+    <main>
+        <div class="corpo-report">
+            <div id="form" class="form">
+                <h2>REPORTAR</h2>
+                <form method="post">
+                    <div class="formulario-report">
+                        <!-- <label for="descricao">Descreva a ocorrência:</label> -->
+                        <input type="text" id="descricao" placeholder="Descreva a ocorrência" />
+                        <!-- <label for="tipo">Escolha o tipo do crime:</label> -->
+                        <input list="tipos" name="tipo" id="tipo" placeholder="Tipo do crime">
+                        <datalist id="tipos">
+                            <option value="Furto">
+                            <option value="Roubo">
+                            <option value="Sequestro">
+                            <option value="Homicídio">
+                            <option value="Outros tipos">
+                        </datalist>
+                        <!-- <label for="data" >Data:</label> -->
+                        <input type="date" id="data"/>
+                        <!-- <label for="hora">Hora:</label> -->
+                        <input type="time" id="hora" />
+                    </div>
+                </form>
+                <div class="botao-report">
+                    <button type="button" onclick="salvar()">REPORTAR</button>
+                </div>
+            </div>
+            <div id="map"></div>
+        </div>
+        </div>
+    </main>
 
     <script src="https://maps.googleapis.com/maps/api/js?key=&callback=initMap&libraries=&v=weekly" async></script>
 </body>
