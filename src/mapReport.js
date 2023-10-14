@@ -30,12 +30,12 @@ function addMarker(evt){
 
 async function salvar(){
     const obj = {
-        titulo: document.getElementById('titulo').value,
+        titulo: document.getElementById('descricao').value,
         tipo: document.getElementById('tipo').value,
         data: document.getElementById('data').value,
         hora: document.getElementById('hora').value,
-        lat: marker.getPosition().lat().toString(),
-        lng: marker.getPosition().lng().toString()
+        lat: marker.getPosition().lat(),
+        lng: marker.getPosition().lng()
     };
 
     fetch("http://localhost:3000/pontos",{

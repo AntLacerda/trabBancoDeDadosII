@@ -1,7 +1,7 @@
 let mapa;
 let marker;
-let infoWindow;
-let novoPonto;
+// let infoWindow;
+// let novoPonto;
 
 let center = {lat: -6.888463202449027, lng: -38.558930105104125};
 
@@ -28,21 +28,22 @@ async function initMap() {
         '<div id="bodyContent">' +
         `<p><b>Tipo de ocorrência: </b>${ponto.tipo}` +
         `<p><b>Data: </b>${ponto.data} às ${ponto.hora}` +
-        `<p><b>Tipo de ocorrência: </b>${ponto.tipo}` +
         "</div>" +
         "</div>";
   
-        infoWindow = new google.maps.InfoWindow({
+        const infoWindow = new google.maps.InfoWindow({
           content: contentString,
           arialLabel: ponto.titulo
         })
   
-        novoPonto = new google.maps.Marker({
+        const novoPonto = new google.maps.Marker({
           position: latLng,
           map: mapa,
           draggable: false,
           title: ponto.titulo
-        }).addListener("click", ()=>{
+        })
+        
+        novoPonto.addListener("click", ()=>{
           infoWindow.open({
             anchor: novoPonto,
             map: mapa
