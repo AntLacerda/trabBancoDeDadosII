@@ -1,19 +1,31 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Mapa de Ocorrências</title>
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
-    <link rel="stylesheet" type="text/css" href="./mapaLeitura.css" />
-    <script src="../src/mapRead.js"></script>
-  </head>
-  <body>
-    <div id="map"></div>
 
-    <h1>teste</h1>
+<head>
+  <title>Mapa de Ocorrências</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+  <link rel="stylesheet" type="text/css" href="./reset.css">
+  <link rel="stylesheet" type="text/css" href="./mapaLeitura.css" />
+  <script src="../src/mapReadScript.js"></script>
+  <script src="../src/mapRead.js"></script>
+</head>
 
-    <script
-      src="https://maps.googleapis.com/maps/api/js?key=&callback=initMap&libraries=&v=weekly"
-      async
-    ></script>
-  </body>
+<body>
+  <div class="menu">
+    <div class="logo">
+      <img src="../public/img/logo.png" alt="Logotipo da N-REPORT">
+      <button onclick="abrirForm()">Reportar um crime</button>
+    </div>
+  </div>
+  <div id="map" class="conteudo"></div>
+  <div class="form">
+    <form>
+      <h1>Reportando um crime:</h1>
+      <button type="button" class="btn cancel" onclick="fecharForm()">Close</button>
+    </form>
+  </div>
+  <script src="https://maps.googleapis.com/maps/api/js?key=&callback=initMap&libraries=&v=weekly" async></script>
+</body>
+
 </html>
